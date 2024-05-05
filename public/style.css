@@ -1,0 +1,100 @@
+.layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 50vh 50vh;
+  grid-gap: 10px;
+  
+}
+
+.component {
+  flex: 1 1 auto;
+  background-color: #f0f0f0;
+  overflow: hidden;
+}
+
+.content {
+  padding: 20px;
+  text-align: center;
+}
+
+
+
+.component img {
+  width: 100%;
+  height: auto; /* Ensure aspect ratio is maintained */
+ /* Remove extra space below image */
+}
+
+.resize-handle {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #000;
+  width: 10px;
+  height: 10px;
+}
+
+.resize-handle.top {
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: ns-resize;
+}
+
+.resize-handle.right {
+  top: 50%;
+  right: -5px;
+  transform: translateY(-50%);
+  cursor: ew-resize;
+}
+
+.resize-handle.bottom {
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: ns-resize;
+}
+
+.resize-handle.left {
+  top: 50%;
+  left: -5px;
+  transform: translateY(-50%);
+  cursor: ew-resize;
+}
+
+.resize-handle.top-left {
+  top: -5px;
+  left: -5px;
+  cursor: nwse-resize;
+}
+
+.resize-handle.top-right {
+  top: -5px;
+  right: -5px;
+  cursor: nesw-resize;
+}
+
+.resize-handle.bottom-left {
+  bottom: -5px;
+  left: -5px;
+  cursor: nesw-resize;
+}
+
+.resize-handle.bottom-right {
+  bottom: -5px;
+  right: -5px;
+  cursor: nwse-resize;
+}
+
+
+@media screen and (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  
+  .component {
+    margin-bottom: 10px;
+    height: auto !important;
+  }
+  
+}
